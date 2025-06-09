@@ -81,7 +81,7 @@ export function Intro() {
         icon={CalendarIcon}
         title="Schedule a Consultation"
       >
-        <div className="h-[600px] bg-white dark:bg-gray-950">
+        <div className="h-[600px] bg-white">
           <CalendlyWidget />
         </div>
       </ModalWrapper>
