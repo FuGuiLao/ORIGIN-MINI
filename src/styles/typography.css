@@ -28,7 +28,7 @@
   --shiki-token-string-expression: theme(colors.emerald.300);
   --shiki-token-punctuation: theme(colors.gray.200);
 
-  .dark & {
+ /* .dark & {
     --typography-body: theme(colors.gray.300);
     --typography-headings: theme(colors.white);
     --typography-quotes: theme(colors.gray.400);
@@ -47,7 +47,7 @@
     --typography-hr: theme(colors.white / 0.1);
     --typography-th-borders: theme(colors.white / 0.1);
     --typography-td-borders: theme(colors.white / 0.05);
-  }
+  } */
 
   color: var(--typography-body);
   font-size: theme(fontSize.sm);
