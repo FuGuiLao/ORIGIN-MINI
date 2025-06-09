@@ -1,8 +1,8 @@
 import { useId } from 'react'
 
 import { Intro, IntroFooter } from '@/components/Intro'
-import { StarField } from '@/components/StarField'
-import { ThemeToggle } from '@/components/ThemeToggle'
+// import { StarField } from '@/components/StarField'
+// import { ThemeToggle } from '@/components/ThemeToggle'
 
 function Timeline() {
   let id = useId()
@@ -17,7 +17,7 @@ function Timeline() {
           <pattern id={id} width="6" height="8" patternUnits="userSpaceOnUse">
             <path
               d="M0 0H6M0 8H6"
-              className="stroke-sky-900/10 dark:stroke-white/10 xl:stroke-white/10"
+              className="stroke-sky-900/10 xl:stroke-black/10"
               fill="none"
             />
           </pattern>
@@ -32,7 +32,7 @@ function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-white lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
       <svg
         className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
         aria-hidden="true"
@@ -41,12 +41,12 @@ function Glow() {
           <radialGradient id={`${id}-desktop`} cx="100%">
             <stop offset="0%" stopColor="rgba(56, 189, 248, 0.3)" />
             <stop offset="53.95%" stopColor="rgba(0, 71, 255, 0.09)" />
-            <stop offset="100%" stopColor="rgba(10, 14, 23, 0)" />
+            <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
           </radialGradient>
           <radialGradient id={`${id}-mobile`} cy="100%">
             <stop offset="0%" stopColor="rgba(56, 189, 248, 0.3)" />
             <stop offset="53.95%" stopColor="rgba(0, 71, 255, 0.09)" />
-            <stop offset="100%" stopColor="rgba(10, 14, 23, 0)" />
+            <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
           </radialGradient>
         </defs>
         <rect
@@ -62,7 +62,7 @@ function Glow() {
           className="lg:hidden"
         />
       </svg>
-      <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-white mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
+      <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-black mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
     </div>
   )
 }
@@ -75,7 +75,7 @@ function FixedSidebar({ main, footer }) {
         <div className="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:flex-1 lg:before:pt-6">
           <div className="pb-16 pt-20 sm:pb-20 sm:pt-32 lg:py-20">
             <div className="relative">
-              <StarField />
+              {/* <StarField /> */}
               {main}
             </div>
           </div>
@@ -92,7 +92,7 @@ export function Layout({ children }) {
   return (
     <>
       <FixedSidebar main={<Intro />} footer={<IntroFooter />} />
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
       <div className="relative flex-auto">
         <Timeline />
         <main className="space-y-20 py-20 sm:space-y-32 sm:py-32">

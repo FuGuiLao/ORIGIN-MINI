@@ -22,11 +22,11 @@ export function ThemeToggle() {
     setMounted(true)
 
     // Automatically set the theme based on the user's system preference on initial load
-    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const userPrefersDark = window.matchMedia('(prefers-color-scheme: light)').matches;
     setTheme(userPrefersDark ? 'dark' : 'light');
 
     // Optional: Listen for system preference changes and update the theme
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
     const handleChange = (e) => {
       setTheme(e.matches ? 'dark' : 'light');
     };
@@ -42,7 +42,7 @@ export function ThemeToggle() {
     return null;
   }
 
-  return (
+  /*return (
     <button
       type="button"
       className="group absolute right-4 top-4 z-50 -m-2.5 p-2.5"
@@ -51,5 +51,5 @@ export function ThemeToggle() {
       <span className="sr-only">Switch to {otherTheme} theme</span>
       <ThemeIcon className="h-6 w-6 fill-white opacity-50 transition-opacity group-hover:opacity-100 lg:fill-gray-900 lg:dark:fill-white" />
     </button>
-  )
+  )*/
 }
