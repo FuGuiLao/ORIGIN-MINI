@@ -1,7 +1,7 @@
 import { useId } from 'react'
 
 import { Intro, IntroFooter } from '@/components/Intro'
-import { StarField } from '@/components/StarField'
+// import { StarField } from '@/components/StarField' // Removed StarField import
 import { GridPattern } from '@/components/GridPattern'
 
 function Timeline() {
@@ -78,8 +78,6 @@ function Glow() {
   )
 }
 
-
-
 function FixedSidebar({ main, footer }) {
   return (
     <div className="relative flex-none overflow-hidden px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex lg:px-0">
@@ -88,7 +86,7 @@ function FixedSidebar({ main, footer }) {
         <div className="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:flex-1 lg:before:pt-6">
           <div className="pb-16 pt-20 sm:pb-20 sm:pt-32 lg:py-20">
             <div className="relative">
-              <StarField />
+              {/* <StarField /> */} {/* StarField removed */}
               {main}
             </div>
           </div>
