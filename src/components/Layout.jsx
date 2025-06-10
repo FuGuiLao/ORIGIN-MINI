@@ -32,7 +32,7 @@ function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-white text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-100 text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
       {/* Restrict GridPattern container to the left column only */}
       <div className="absolute inset-0 lg:right-[calc(max(2rem,50%-38rem)+40rem)]">
         <GridPattern
