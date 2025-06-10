@@ -28,8 +28,6 @@ function Timeline() {
   )
 }
 
-import { GridPattern } from '@/components/GridPattern'
-
 function Glow() {
   let id = useId()
 
