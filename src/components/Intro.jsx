@@ -59,11 +59,11 @@ export function Intro() {
           <Image src="/images/origin-logo.png" alt="" width={64} height={64} />
         </Link>
       </div>
-      <h1 className="mt-4 font-display text-4xl/tight font-semibold text-white">
+      <h1 className="mt-4 font-display text-4xl/tight font-semibold text-gray-900">
         ORIGIN <span className="font-normal">/</span> {' '}
         <span className="text-sky-300 font-light">Intelligence</span>
       </h1>
-      <p className="mt-4 text-sm/6 text-gray-300">
+      <p className="mt-4 text-sm/6 text-gray-700">
         Origin developed and operates an industry-leading system to aggregate structured and unstructured data. We then use a combination of machine learning, artificial intelligence, and experienced human intelligence to process that data and monitor it in real-time. We provide services to government agencies and organizations.
       </p>
       <SignUpForm />
@@ -99,7 +99,7 @@ export function Intro() {
 
 export function IntroFooter() {
   return (
-    <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-gray-500">
+    <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-gray-600">
       &copy; {new Date().getFullYear()} Origin Intelligence Inc. All Rights Reserved.<br />
       Privacy Policy | Terms of Use | Data Security
      </p>

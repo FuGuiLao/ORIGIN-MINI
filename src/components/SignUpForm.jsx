@@ -119,7 +119,7 @@ export function SignUpForm() {
         name="email"
         id={id}
         placeholder="Email Address"
-        className="peer w-0 flex-auto bg-transparent px-4 py-2.5 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-[0.8125rem]/6"
+        className="peer w-0 flex-auto bg-transparent px-4 py-2.5 text-base text-gray-900 placeholder:text-gray-600 focus:outline-none sm:text-[0.8125rem]/6"
         disabled={isSent}
         value={emailAddress}
         onChange={handleChangeEmail}
