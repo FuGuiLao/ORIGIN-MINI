@@ -32,12 +32,17 @@ function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-white text-gray-200">
-      <GridPattern
-        x="100%"
-        y="100%"
-        patternTransform="translate(112 64)"
-      />
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-white text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+      {/* Restrict GridPattern container to the left column only */}
+      <div className="absolute inset-0 lg:right-[calc(max(2rem,50%-38rem)+40rem)]">
+        <GridPattern
+          x="100%"
+          y="100%"
+          patternTransform="translate(112 64)"
+        />
+      </div>
+
+      {/* Keep existing background gradient */}
       <svg
         className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
         aria-hidden="true"
@@ -67,10 +72,12 @@ function Glow() {
           className="lg:hidden"
         />
       </svg>
+
       <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-black mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
     </div>
   )
 }
+
 
 function FixedSidebar({ main, footer }) {
   return (
