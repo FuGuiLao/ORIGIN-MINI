@@ -28,13 +28,15 @@ function Timeline() {
   )
 }
 
+import { GridPattern } from '@/components/GridPattern'
+
 function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-100 text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
-      {/* Restrict GridPattern container to the left column only */}
-      <div className="absolute inset-0 lg:right-[calc(max(2rem,50%-38rem)+40rem)]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-zinc-200 text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+      {/* Full-coverage grid */}
+      <div className="absolute inset-0">
         <GridPattern
           x="100%"
           y="100%"
@@ -42,7 +44,7 @@ function Glow() {
         />
       </div>
 
-      {/* Keep existing background gradient */}
+      {/* Background radial gradients */}
       <svg
         className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
         aria-hidden="true"
@@ -77,6 +79,7 @@ function Glow() {
     </div>
   )
 }
+
 
 
 function FixedSidebar({ main, footer }) {
