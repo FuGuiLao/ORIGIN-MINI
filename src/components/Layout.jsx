@@ -32,7 +32,7 @@ function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-zinc-200 text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-zinc-300 text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
       {/* Full-coverage grid */}
       <div className="absolute inset-0">
         <GridPattern
