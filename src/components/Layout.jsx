@@ -2,7 +2,7 @@ import { useId } from 'react'
 
 import { Intro, IntroFooter } from '@/components/Intro'
 import { StarField } from '@/components/StarField'
-// Removed: import { ThemeToggle } from '@/components/ThemeToggle'
+import { GridPattern } from '@/components/GridPattern'
 
 function Timeline() {
   let id = useId()
@@ -32,7 +32,12 @@ function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-white lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-white text-gray-200">
+      <GridPattern
+        x="100%"
+        y="100%"
+        patternTransform="translate(112 64)"
+      />
       <svg
         className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
         aria-hidden="true"
@@ -92,7 +97,6 @@ export function Layout({ children }) {
   return (
     <>
       <FixedSidebar main={<Intro />} footer={<IntroFooter />} />
-      {/* Removed: <ThemeToggle /> */}
       <div className="relative flex-auto">
         <Timeline />
         <main className="space-y-20 py-20 sm:space-y-32 sm:py-32">
