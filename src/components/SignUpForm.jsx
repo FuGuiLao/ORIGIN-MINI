@@ -2,32 +2,28 @@ import { useId, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { Button } from '@/components/Button';
 
+
 export function SignUpForm() {
   const [emailAddress, setEmailAddress] = useState('');
   const [isSent, setIsSent] = useState(false);
   const [errorText, setErrorText] = useState('');
   const [formStartTime, setFormStartTime] = useState(Date.now());
   const [honeypot, setHoneypot] = useState('');
-  const [jsCheckValue, setJsCheckValue] = useState(''); // JavaScript check via state
-  const [isLinux, setIsLinux] = useState(false); // Platform restriction state
+  const [jsCheckValue, setJsCheckValue] = useState('');
+  const [isLinux, setIsLinux] = useState(false);
   let id = useId();
 
   useEffect(() => {
-    console.log('useEffect executed'); // Debugging
     setFormStartTime(Date.now());
-    setJsCheckValue('passed'); // Set JavaScript check
-    console.log('JavaScript check set via state: passed'); // Debugging
-
-    // Detect if the user is on Linux
+    setJsCheckValue('passed');
     const platform = navigator.platform.toLowerCase();
     const userAgent = navigator.userAgent.toLowerCase();
     const linuxDetected = platform.includes('linux') || userAgent.includes('linux');
     setIsLinux(linuxDetected);
-    console.log('Is Linux user:', linuxDetected); // Debugging
   }, []);
 
   const validateEmail = (email) => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
 
@@ -42,41 +38,27 @@ export function SignUpForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Restrict Linux users
     if (isLinux) {
       setErrorText('Access denied. Linux users are restricted.');
-      console.log('Blocked Linux user attempt'); // Debugging
       return;
     }
-
-    // Honeypot validation
-    console.log('Honeypot value:', honeypot); // Debugging
     if (honeypot) {
       setErrorText('Spam detected. Please try again.');
       return;
     }
-
-    // Time-based validation
     const timeElapsed = Date.now() - formStartTime;
-    console.log('Time elapsed since form load:', timeElapsed); // Debugging
     if (timeElapsed < 2000) {
       setErrorText('Form submission too fast. Please try again.');
       return;
     }
-
-    console.log('JavaScript check value via state:', jsCheckValue); // Debugging
     if (jsCheckValue !== 'passed') {
       setErrorText('Spam detected. Please try again.');
       return;
     }
-
     if (!validateEmail(emailAddress)) {
       setErrorText('Invalid Email Address');
       return;
     }
-
-    console.log('All validations passed!'); // Debugging
 
     const serviceID = 'service_9eddj4w';
     const templateID = 'template_4hdqwxt';
@@ -84,19 +66,17 @@ export function SignUpForm() {
 
     emailjs
       .send(serviceID, templateID, { emailAddress }, userID)
-      .then((response) => {
+      .then(() => {
         setIsSent(true);
         setEmailAddress('A representative will contact you.');
-        console.log('Email sent successfully!', response);
       })
-      .catch((error) => {
-        console.error('Error sending email:', error); // Debugging
+      .catch(() => {
         setErrorText('Error Sending Email');
       });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative isolate mt-8 flex items-center pr-1">
+    <form onSubmit={handleSubmit} className="relative isolate mt-8 flex items-center pr-2">
       {/* Honeypot Field */}
       <input
         type="text"
@@ -112,26 +92,36 @@ export function SignUpForm() {
       <label htmlFor={id} className="sr-only">
         Email address
       </label>
-      <input
-        required
-        type="email"
-        autoComplete="email"
-        name="email"
-        id={id}
-        placeholder="Email Address"
-        className="peer w-0 flex-auto bg-transparent px-4 py-2.5 text-base text-gray-900 placeholder:text-gray-600 focus:outline-none sm:text-[0.8125rem]/6"
-        disabled={isSent}
-        value={emailAddress}
-        onChange={handleChangeEmail}
-      />
-      {!!errorText && (
-        <span className="absolute left-2 bottom-[-28px] text-sm text-red-800">
-          {errorText}
-        </span>
-      )}
-      <Button type="submit" arrow={!isSent} disabled={isSent}>
-        {isSent ? 'Thank You' : 'Get Access'}
+
+      {/* Email Input with Always-Visible Ring */}
+      <div className="relative sm:static sm:flex-auto">
+        <input
+          type="email"
+          required
+          aria-label="Email address"
+          placeholder="Email Address"
+          className="peer relative z-10 w-full appearance-none bg-transparent px-4 py-2 text-base text-white placeholder:text-white/70 focus:outline-none sm:py-3"
+          disabled={isSent}
+          value={emailAddress}
+          onChange={handleChangeEmail}
+        />
+        <div
+          className={`absolute inset-0 rounded-md border ${
+            !!errorText ? 'border-red-800' : 'border-white/20'
+          } peer-focus:border-white/50 peer-focus:bg-zinc-800 peer-focus:ring-1 peer-focus:ring-white/50 sm:rounded-xl`}
+        />
+        {!!errorText && (
+          <span className="absolute left-4 bottom-[-32px] text-sm text-red-800">
+            {errorText}
+          </span>
+        )}
+      </div>
+
+      {/* Matching Red "Get Access" Button */}
+      <Button type="submit">
+        Learn More
       </Button>
+
     </form>
   );
 }

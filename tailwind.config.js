@@ -11,7 +11,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
-        display: ['Mona Sans', ...defaultTheme.fontFamily.sans],
+        display: ['Cabinet Grotesk', ...defaultTheme.fontFamily.sans],
       },
       opacity: {
         2.5: '0.025',

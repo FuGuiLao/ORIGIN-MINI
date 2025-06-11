@@ -19,7 +19,8 @@ export default function App({ Component, pageProps }) {
         />
         <meta name="apple-mobile-web-app-title" content="ORIGIN" />
       </Head>
-      <ThemeProvider attribute="class" disableTransitionOnChange>
+      {/* Force light theme by setting defaultTheme="light" and disabling system preference */}
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
         <MDXProvider components={mdxComponents}>
           <Layout>
             <Component {...pageProps} />

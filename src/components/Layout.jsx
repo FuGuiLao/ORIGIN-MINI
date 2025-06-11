@@ -17,7 +17,7 @@ function Timeline() {
           <pattern id={id} width="6" height="8" patternUnits="userSpaceOnUse">
             <path
               d="M0 0H6M0 8H6"
-              className="stroke-sky-900/10 xl:stroke-black/10"
+              className="stroke-red-900/10 xl:stroke-black/10"
               fill="none"
             />
           </pattern>
@@ -32,7 +32,7 @@ function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-zinc-800 text-gray-200 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-zinc-900 text-gray-900 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
       {/* Full-coverage grid */}
       <div className="absolute inset-0">
         <GridPattern
