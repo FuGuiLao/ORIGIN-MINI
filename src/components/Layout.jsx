@@ -33,14 +33,7 @@ function Glow() {
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-zinc-900 text-gray-900 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
-      {/* Full-coverage grid */}
-      <div className="absolute inset-0">
-        <GridPattern
-          x="100%"
-          y="100%"
-          patternTransform="translate(112 64)"
-        />
-      </div>
+      
 
       {/* Background radial gradients */}
       <svg
