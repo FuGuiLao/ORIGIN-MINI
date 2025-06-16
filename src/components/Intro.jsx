@@ -105,10 +105,10 @@ export function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-white">
       <Link href="https://www.origininvestigations.com">
-        Return to our main site
+        
       </Link> 
       <br />
-      &copy; {new Date().getFullYear()} Origin Investigations Inc. All Rights Reserved.
+     
       
     
     </p>
