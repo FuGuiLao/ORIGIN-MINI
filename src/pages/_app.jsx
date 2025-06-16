@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>ORIGIN / Intelligence</title>
+        <title>ORIGIN / Investigation - Insurance</title>
         <meta
           name="description"
           content=""
