@@ -65,6 +65,7 @@ export function Intro() {
       </h1>
       <div className="mt-4 text-sm/6 text-gray-300">
         <p>Origin is a recognized leader in Special Investigations Unit (SIU) services for the insurance industry. With a proven track record of uncovering fraudulent claims, securing confessions, and driving claim withdrawals, we provide insurers with the critical intelligence needed to make informed decisions.</p>
+        <p></p>
         <p>Our team of seasoned investigators combines advanced surveillance techniques, data analysis, and industry expertise to deliver consistent results and protect our clients from financial loss.</p>
       </div>
      {/*  <SignUpForm /> */}
