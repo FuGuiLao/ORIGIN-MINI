@@ -3,6 +3,7 @@ import { useId } from 'react'
 import { Intro, IntroFooter } from '@/components/Intro'
 // import { StarField } from '@/components/StarField' // Removed StarField import
 import { GridPattern } from '@/components/GridPattern'
+import { Pattern } from '@/components/Pattern'
 
 function Timeline() {
   let id = useId()
@@ -29,50 +30,9 @@ function Timeline() {
 }
 
 function Glow() {
-  let id = useId()
-
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-zinc-900 text-gray-900 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
-     {/* Full-coverage grid 
-      <div className="absolute inset-0">
-        <GridPattern
-          x="100%"
-          y="100%"
-          patternTransform="translate(112 64)"
-        />
-      </div>
-      */}
-      {/* Background radial gradients */}
-      <svg
-        className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
-        aria-hidden="true"
-      >
-        <defs>
-          <radialGradient id={`${id}-desktop`} cx="100%">
-            <stop offset="0%" stopColor="rgba(248, 56, 56, 0.3)" />
-            <stop offset="53.95%" stopColor="rgba(255, 0, 0, 0.09)" />
-            <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
-          </radialGradient>
-          <radialGradient id={`${id}-mobile`} cy="100%">
-            <stop offset="0%" stopColor="rgba(248, 56, 56, 0.3)" />
-            <stop offset="53.95%" stopColor="rgba(255, 0, 0, 0.09)" />
-            <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
-          </radialGradient>
-        </defs>
-        <rect
-          width="100%"
-          height="100%"
-          fill={`url(#${id}-desktop)`}
-          className="hidden lg:block"
-        />
-        <rect
-          width="100%"
-          height="100%"
-          fill={`url(#${id}-mobile)`}
-          className="lg:hidden"
-        />
-      </svg>
-
+    <div className="absolute inset-0 -z-10 overflow-visible bg-zinc-800 text-gray-800 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+      <Pattern className="absolute -top-2 right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20" />
       <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-black mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
     </div>
   )
@@ -80,7 +40,7 @@ function Glow() {
 
 function FixedSidebar({ main, footer }) {
   return (
-    <div className="relative flex-none overflow-hidden px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex lg:px-0">
+    <div className="relative flex-none overflow-visible px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex lg:px-0">
       <Glow />
       <div className="relative flex w-full lg:pointer-events-auto lg:mr-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] lg:overflow-y-auto lg:overflow-x-hidden lg:pl-[max(4rem,calc(50%-38rem))]">
         <div className="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:flex-1 lg:before:pt-6">
