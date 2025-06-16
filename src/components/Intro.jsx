@@ -56,7 +56,7 @@ export function Intro() {
     <>
       <div className="flex items-center jusitfy-center">
         <Link href="/">
-          <Image src="/images/origin-logo.png" alt="" width={64} height={64} />
+          <Image src="/images/origin-logo-white.png" alt="" width={64} height={64} />
         </Link>
       </div>
       <h1 className="mt-4 font-display text-4xl/tight font-semibold text-white">
@@ -97,7 +97,7 @@ export function Intro() {
   )
 }
 
-import Link from 'next/link'
+
 
 export function IntroFooter() {
   return (
