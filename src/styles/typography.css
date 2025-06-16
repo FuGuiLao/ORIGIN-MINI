@@ -3,10 +3,10 @@
   --typography-headings: theme(colors.gray.900);
   --typography-quotes: theme(colors.gray.500);
   --typography-quotes-border: theme(colors.gray.200);
-  --typography-links: theme(colors.red.900);
-  --typography-link-hover: theme(colors.red.700);
+  --typography-links: theme(colors.red.800);
+  --typography-link-hover: theme(colors.red.600);
   --typography-link-underline: theme(colors.red.600 / 0);
-  --typography-link-hover-underline: theme(colors.red.600 / 0.4);
+  --typography-link-hover-underline: theme(colors.red.600 / 0);
   --typography-pre: theme(colors.gray.300);
   --typography-pre-shadow: theme(boxShadow.md);
   --typography-bold: theme(colors.gray.900);
