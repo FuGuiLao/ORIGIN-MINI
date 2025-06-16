@@ -63,9 +63,10 @@ export function Intro() {
         ORIGIN <span className="font-normal">/</span> {' '}
         <span className="text-red-800 font-light">Insurance</span>
       </h1>
-      <p className="mt-4 text-sm/6 text-gray-300">
-        Origin is a recognized leader in Special Investigations Unit (SIU) services for the insurance industry. With a proven track record of uncovering fraudulent claims, securing confessions, and driving claim withdrawals, we provide insurers with the critical intelligence needed to make informed decisions. <br /> Our team of seasoned investigators combines advanced surveillance techniques, data analysis, and industry expertise to deliver consistent results and protect our clients from financial loss.
-      </p>
+      <div className="mt-4 text-sm/6 text-gray-300">
+        <p>Origin is a recognized leader in Special Investigations Unit (SIU) services for the insurance industry. With a proven track record of uncovering fraudulent claims, securing confessions, and driving claim withdrawals, we provide insurers with the critical intelligence needed to make informed decisions.</p>
+        <p>Our team of seasoned investigators combines advanced surveillance techniques, data analysis, and industry expertise to deliver consistent results and protect our clients from financial loss.</p>
+      </div>
      {/*  <SignUpForm /> */}
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconButton icon={CalendarIcon} className="flex-none" onClick={() => setOpenSchedule(true)}>
@@ -99,7 +100,7 @@ export function Intro() {
 
 
 
-export function IntroFooter() {
+{/*export function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-white">
       <Link href="https://www.origininvestigations.com">
@@ -111,4 +112,4 @@ export function IntroFooter() {
     
     </p>
   )
-}
+}*/}
