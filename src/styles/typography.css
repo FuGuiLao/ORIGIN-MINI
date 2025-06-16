@@ -3,7 +3,7 @@
   --typography-headings: theme(colors.gray.900);
   --typography-quotes: theme(colors.gray.500);
   --typography-quotes-border: theme(colors.gray.200);
-  --typography-links: theme(colors.red.800);
+  --typography-links: theme(colors.blue.800);
   --typography-link-hover: theme(colors.red.600);
   --typography-link-underline: theme(colors.red.600 / 0);
   --typography-link-hover-underline: theme(colors.red.600 / 0);
