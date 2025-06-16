@@ -61,12 +61,12 @@ export function Intro() {
       </div>
       <h1 className="mt-4 font-display text-4xl/tight font-semibold text-white">
         ORIGIN <span className="font-normal">/</span> {' '}
-        <span className="text-red-800 font-light">Intelligence</span>
+        <span className="text-red-800 font-light">Insurance Investigations</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
-        Origin developed and operates an industry-leading system to aggregate structured and unstructured data. We then use a combination of machine learning, artificial intelligence, and experienced human intelligence to process that data and monitor it in real-time. We provide services to government agencies and organizations.
+        Origin is a recognized leader in Special Investigations Unit (SIU) services for the insurance industry. With a proven track record of uncovering fraudulent claims, securing confessions, and driving claim withdrawals, we provide insurers with the critical intelligence needed to make informed decisions. Our team of seasoned investigators combines advanced surveillance techniques, data analysis, and industry expertise to deliver consistent results and protect our clients from financial loss. When it comes to insurance fraud, Origin sets the standard for integrity, efficiency, and outcomes.
       </p>
-      <SignUpForm />
+     {/*  <SignUpForm /> */}
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconButton icon={CalendarIcon} className="flex-none" onClick={() => setOpenSchedule(true)}>
           Schedule a Consultation
@@ -97,11 +97,18 @@ export function Intro() {
   )
 }
 
+import Link from 'next/link'
+
 export function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-white">
-      &copy; {new Date().getFullYear()} Origin Intelligence Inc. All Rights Reserved.<br />
-      Privacy Policy | Terms of Use | Data Security
-     </p>
+      <Link href="https://www.origininvestigations.com" className="underline hover:text-gray-300">
+        Return to our main site
+      </Link> 
+      <br />
+      &copy; {new Date().getFullYear()} Origin Investigations Inc. All Rights Reserved.
+      
+    
+    </p>
   )
 }
