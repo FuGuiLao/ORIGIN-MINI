@@ -72,7 +72,7 @@ function ArticleHeader({ id, title, date }) {
               date={date}
               className="text-2xs/4 font-medium text-gray-500 dark:text-white/50 xl:hidden"
             /> */}
-            <h1 className="text-2xs/4 font-medium text-red-900 xl:hidden">{title}</h1>
+            <h1 className="text-2xs/4 font-medium text-gray-50 xl:hidden">{title}</h1>
           </Link>
         </div>
       </ContentWrapper>
